@@ -18,7 +18,7 @@ class MealItem extends StatelessWidget {
     @required this.imageUrl,
     @required this.affordability,
     @required this.complexity,
-    @required this.duration
+    @required this.duration,
   } );
   
 String get complexityText {
@@ -52,7 +52,12 @@ String get affordabilityText {
     Navigator.of(context).pushNamed(
       MealDetailScreen.routeName,
       arguments: id,
-    );
+    )
+      .then((result) {
+        if(result != null) {
+          // removeItem(result);
+        }
+      });
   }
 
   @override
